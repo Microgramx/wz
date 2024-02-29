@@ -11,8 +11,7 @@ import SearchBox from "../components/Common/SearchBox";
 import ExploreResult from "../components/Explore/ExploreResult";
 import { ConfigType } from "../shared/types";
 import ExploreFilter from "../components/Explore/ExploreFilter";
-import AnimeExplore from '../components/Anime/AnimeExploreFilter'
-import AnimeSearchBox from "../components/Common/AnimeSearchBox";
+
 
 interface ExploreProps {}
 
@@ -180,15 +179,8 @@ const Explore: FC<ExploreProps> = () => {
               <ExploreFilter currentTab={currentTab} />
             </div>
           </>
-        )}
-
-        { currentTab === "anime" && (
-           <>
-            <div className="shrink-0 md:max-w-[310px] w-full md:py-12 pt-4 px-3">
-                <AnimeExplore/>
-            </div>
-           </>
-        )}
+        ) }
+        
       </div>
     </>
   );

@@ -35,6 +35,7 @@ export const calculateTimePassed = (time: number): string => {
   return "Just now";
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const convertErrorCodeToMessage = (errorCode: string) => {
   if (errorCode === "auth/email-already-in-use")
     return "Your email is already in use.";
