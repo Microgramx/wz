@@ -1,0 +1,49 @@
+/* SortBy.css */
+.bg-glass {
+  position: relative; /* Define o contexto de posicionamento */
+  background-color: rgba(255, 255, 255, 0.802); /* Cor de fundo estilo vidro */
+  backdrop-filter: blur(10px); /* Efeito de vidro */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: background-color 0.3s ease; /* Transição de cor de fundo */
+  z-index: 20 ; /* Garante que a caixa esteja acima de todas as outras */
+}
+
+.select-menu {
+  position: absolute; /* Define o posicionamento absoluto */
+  top: calc(100% + 10px); /* Posiciona a lista abaixo do botão */
+  left: 0;
+  width: 100%;
+  opacity: 0; /* Começa com opacidade 0 para a animação */
+  pointer-events: none; /* Esconde a lista enquanto estiver fechada */
+  transform: translateY(-10px); /* Inicia a lista um pouco acima para aplicar o efeito de deslizamento */
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); /* Transições suaves de opacidade e transformação */
+}
+
+.select-menu.open {
+  opacity: 1; /* Mostra a lista quando aberta */
+  pointer-events: auto; /* Permite interação com a lista quando aberta */
+  transform: translateY(0); /* Aplica o efeito de deslizamento */
+}
+
+.select-menu::before {
+  content: "";
+  position: absolute;
+  top: -8px; /* Ajusta a posição vertical para alinhar com a borda superior da caixa */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #49494b; /* Cor igual ao fundo do container */
+}
+
+.bg-glass.open {
+  background-color: rgba(207, 207, 207, 0.603); /* Cor de fundo estilo vidro quando aberto */
+}
+
+/* Efeito hover */
+.bg-glass:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Cor de fundo estilo vidro ao passar o mouse */
+}
